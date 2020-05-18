@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="ISO-8859-1">
+<title>Formulario</title>
+</head>
+<body>
+<div class="container-fluid">
+
+		<div class="card mb-3">
+          <div class="card-header">
+          	Informaci&oacute;n del Estudiante
+          </div>
+          
+          <div class="card-body">
+          <form method="post" th:action="@{/index}" th:object="${estudiante}">
+          	<input type="hidden" name="c_usuario" class="form-control" th:field="*{c_usuario}" />
+          	<table>
+          		
+          		<tr>
+          			<div class="form-group">
+          			<td><label>Nombre: </label></td>
+          			<td><input type="text" id="nombre" class="form-control" th:field="*{nombre}" ></td>
+          			<span th:errors="*{nombre}" style ="color: #FF0000"></span>
+          			</div>
+          		</tr>
+          		
+          		<tr>
+          		<div class="form-group">
+          			<td><label>Apellido:</label></td>
+          			<td><input type="text" id="apellido" class="form-control" th:field="*{apellido}" ></td>
+          			<span th:errors="*{apellido}" style ="color: #FF0000"></span>
+          			</div>
+          		</tr>
+          		<tr>
+          		<div class="form-group">
+          			<td><label>Carne: </label></td>
+          			<td><input type="number" id="carne" class="form-control" th:field="*{carne}" ></td>
+          			<span th:errors="*{carne}" style ="color: #FF0000"></span>
+ 					</div>         		
+          		</tr>
+          		<tr>
+          		<div class="form-group">
+          			<td><label>Carrera: </label></td>
+          			<td><input type="text" id="carrer" class="form-control" th:field="*{carrera}" ></td>
+          			<span th:errors="*{carrera}" style ="color: #FF0000"></span>
+          			</div>
+          		</tr>
+          		
+          		
+          		<tr>
+          			<td><input type="submit" class="btn btn-primary btn-block" value="Guardar cambios" /></td>
+          		</tr>
+          		<tr>
+          			<td><input type="button" class="btn btn-secondary" value="Listado" onclick="location.href='./listado'" /></td>
+          		</tr>
+          	</table>
+          	</form>
+          </div>
+        </div>
+
+      </div>
+
+</body>
+</html>
